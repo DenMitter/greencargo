@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Michroma&display=swap');
+/* ~~~~~~~~~~~~~~~ Reset Style ~~~~~~~~~~~~~~~ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display: block;}
+html {height: 100%;}
+body {
+    line-height: 1;
+    font-family: "Inter", sans-serif;
+    color: var(--dark-gray);
+    background-color: var(--background-color);
+}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* * {border: solid 1px red !important;} */
+:root {
+    --dark-gray: #2F2F2F;
+    --light-gray: #aaaaaa;
+    --background-color: #EEF3FF;
+    --primary: #0BB850;
+    --primary-transparent: #0bb85088;
+    --primary-light: #33c56e;
+    --primary-dark: #1b914a;
+    --black: #010101;
+}
+::selection {
+    background: #9ff0c0; /* Safari */
+    /* color: white; */
+}
+h1 {
+    font-size: 55px;
+    font-weight: bold;
+}
+.title {text-align: center;}
+main {
+    position: relative;
+    margin-top: 71px;
+}
+.background-text {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: calc(100vw - 91.4vw);
+    font-family: "Michroma", sans-serif;
+    color: transparent;
+    -webkit-text-stroke: #00000025;
+    -webkit-text-stroke-width: 1px;
+    letter-spacing: 21px;
+    user-select: none;
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    gap: 41px;
+    justify-content: center;
+}
+.button {
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 24px 51px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--primary);
+    border: solid 2px var(--primary);
+    box-shadow: 0px 4px 30px var(--primary-transparent);
+    border-radius: 6px;
+    transition: 0.2s;
+}
+.button:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+.button-outline {
+    background-color: transparent;
+    color: var(--primary);
+    box-shadow: none;
+}
+.button-outline:hover {
+    background-color: transparent;
+    border-color: var(--primary-dark);
+    color: var(--primary-dark);
+}
+.primary {
+    color: var(--primary);
+    font-weight: bold;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+/* ~~~~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~~~ */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    border-bottom: solid 1px #00000015;
+    padding: 21px 0;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+nav ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 17px;
+    text-decoration: none;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+/* Стилі для бургера */
+.burger {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+.burger::before,
+.burger::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--dark-gray);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+.burger::before {
+    transform: translateY(-8px);
+}
+.burger::after {
+    transform: translateY(4px);
+}
+.burger.active::before {
+    transform: translateY(4px) rotate(-45deg);
+}
+.burger.active::after {
+    transform: translateY(4px) rotate(45deg);
+}
+/* Анімація для відображення/приховування меню */
+.show {
+    display: flex;
+    flex-direction: column;
+}
+/* ~~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~ */
+.buy-car__advantages {
+    position: absolute;
+    top: 185px;
+    display: flex;
+    flex-direction: column;
+    gap: 61px;
+}
+.buy-car__advantages-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: var(--black);
+}
+.buy-car__advantages-item p {
+    width: 179px;
+    line-height: 25px;
+    font-weight: 500;
+}
+.buy-car__advantages-list {
+    display: none;
+    column-gap: calc(100vw - 88.7vw);
+    row-gap: 45px;
+}
+.buy-car__slider {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 451px;
+}
+.buy-car__slider img {
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+    max-width: 1145px;
+}
+.buy-car__slider img.active {
+    opacity: 1;
+}
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 27px;
+}
+.slider-dot {
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    margin: 0 10px;
+    padding: 4px;
+    cursor: pointer;
+    z-index: 1;
+}
+.slider-dot.active {
+    background-color: var(--primary);
+}
+/* ~~~~~~~~~~~~~~~~~~ Media ~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1600px) {
+    .buy-car__advantages-list {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 45px auto 65px;
+        justify-content: center;
+    }
+    .buy-car__advantages {display: none;}
+    .buy-car__advantages-item img {display: none;}
+}
+@media screen and (max-width: 1280px) {
+    .buy-car__advantages-list {column-gap: 41px;}
+    .buy-car__advantages-item p {
+        /* font-size: 16px; */
+        width: 210px;
+    }
+    .buy-car__slider img {width: 925px;}
+    .title {font-size: 35px;}
+    .background-text {display: none;}
+    .buy-car__slider {min-height: 375px;}
+    .button {
+        font-weight: 500;
+        padding: 21px 41px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .buy-car__advantages {margin-top: 0;}
+    .buy-car__slider img {width: 762px;}
+    .buy-car__slider {min-height: 295px;}
+    .title {font-size: 32px;}
+    .buy-car__advantages-item p {
+        font-size: 17px;
+        width: 210px;
+    }
+    .buttons {gap: 19px;}
+    nav ul {gap: 45px;}
+}
+@media screen and (max-width: 768px) {
+    .title {font-size: 29px;}
+    .buy-car__slider img {width: 682px;}
+    .buy-car__advantages-item p {
+        font-size: 16px;
+        width: 160px;
+    }
+    .button {
+        padding: 16px 27px;
+        font-size: 14px;
+    }
+    .burger {display: block;}
+    nav ul {display: none;}
+    nav a .logo {width: 71px;}
+}
+@media screen and (max-width: 680px) {
+    .title {font-size: 22px;}
+    .buy-car__slider {min-height: 245px;}
+    .buy-car__slider img {width: 472px;}
+    .buy-car__advantages-item p {
+        font-size: 14px;
+        width: 130px;
+    }
+    .buttons {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    nav ul {gap: 5px;}
+    nav ul li a {font-size: 12px;}
+    nav ul li a img {width: 35px;}
+}
+@media screen and (max-width: 480px) {
+    .title {font-size: 19px;}
+    .buy-car__slider {min-height: 245px;}
+    .buy-car__slider img {width: 472px;}
+    .buy-car__advantages-item p {
+        font-size: 14px;
+        width: 130px;
+    }
+    .buttons {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .title {font-size: 16px;}
+    .buy-car__slider {min-height: 225px;}
+    .buy-car__slider img {width: 402px;}
+    .buy-car__advantages-item p {
+        font-size: 14px;
+        width: 112px;
+    }
+    .buttons {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav ul {gap: 5px;}
+    nav a .logo {width: 53px;}
+    nav ul li a {
+        font-size: 11.3px;
+        gap: 7px;
+    }
+    nav ul li a img {width: 25px;}
+    .burger::before,
+    .burger::after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: var(--dark-gray);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transition: transform 0.3s ease;
+    }
+    .burger.active::before, .burger::after {
+        top: 35%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .title {font-size: 14.9px;}
+    .buy-car__slider {min-height: 195px;}
+    .buy-car__slider img {width: 402px;}
+    .buy-car__advantages-item p {
+        font-size: 13px;
+        width: 107px;
+    }
+    .buttons {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
